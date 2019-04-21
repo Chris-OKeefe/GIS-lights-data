@@ -1,3 +1,5 @@
+rm(list = ls())
+
 library(sp)
 library(raster)
 library(rgdal)
@@ -7,7 +9,7 @@ library(dplyr)
 library(reshape)
 library(tmap)
 
-rm(list = ls())
+setwd("~/Documents/Programs/R-general/GIS-lights-data")
 
 #Read in Data
 #Lights raster data
