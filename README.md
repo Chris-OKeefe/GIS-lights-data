@@ -13,9 +13,11 @@ Some [notes](http://economics.mit.edu/files/8945) on using lights data
 * Use R's GIS packages to process data.
 
 ## To do:
-* Fix basic plotting issue
-* Overlay US National Parks Data
-* Extract data to generate park-level indicator
-	* Consider removing 1 mile boundary around park border
-* Find international national parks data for non-US sites
-* Repeat for US Congressional districts, US counties (with population data?), US municipalities
+- [x] Fix basic plotting issue
+- [x] Crop for US data
+- [ ] Crop actual image
+- [ ] Overlay US National Parks Data
+- [ ] Extract data to generate park-level indicator
+	- [ ] Consider removing 1 mile boundary around park border
+- [ ] Find international national parks data for non-US sites
+- [ ] Repeat for US Congressional districts, US counties (with population data?), US municipalities
