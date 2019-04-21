@@ -9,7 +9,10 @@ GIS-based indicator of light pollution levels within National Parks.
 
 Some [notes](http://economics.mit.edu/files/8945) on using lights data
 
-To do:
+## Skills:
+* Use R's GIS packages to process data.
+
+## To do:
 * Fix basic plotting issue
 * Overlay US National Parks Data
 * Extract data to generate park-level indicator
