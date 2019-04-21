@@ -16,10 +16,20 @@ setwd("~/Documents/Programs/R-general/GIS-lights-data")
 lights <- raster("./build/input/lights-data-2013/F182013.v4c_web.stable_lights.avg_vis.tif") #cleaned up version of avg_vis files
 
 #US Borders data
-borders <- readOGR(dsn = path.expand("~/Documents/Programs/R-general/GIS-lights-data/build/input/us-national-borders"), layer = "USA_adm0")
+us_borders <- getData('GADM', country = "USA", level = 0)
+#borders <- readOGR(dsn = path.expand("~/Documents/Programs/R-general/GIS-lights-data/build/input/us-national-borders"), layer = "USA_adm0")
 
-#Testing-plot lights data, US borders
-plot(lights)
-plot(borders, add = T) #they don't align, but resolutions seem to map ok.
+#Plot lights data, US borders
+pdf("lights-test.pdf")#not sure if it's worth investing in making map look good.
+        plot(lights, xaxt = 'n', yaxt = 'n')
+        plot(us_borders, add = T, lwd = .25) 
+dev.off()
+
+#Cropping?
+pdf("lights-test-us.pdf")
+    test.sub <- crop(lights, extent(us_borders)) #may not work, gives an error & IDK how to check results
+    test.sub <- mask(test.sub, us_borders) #makes sure GIS features from raster properly associated with new object. Seems to take a long time
+#then re-do plot like in above
+dev.off()
 
 #NPS shapefiles
